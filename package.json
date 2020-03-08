@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/adrianopb/simple-crawler-api#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "serverless": "^1.65.0"
   }
 }
