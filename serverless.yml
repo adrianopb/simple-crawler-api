@@ -57,12 +57,12 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  products:
+  handler:   
     handler: handler.server
-    events:
-     - http:
-         path: /products
-         method: get
+      events:
+      - http:
+          path: /products
+          method: get
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
