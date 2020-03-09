@@ -4,7 +4,7 @@ const express = require('express')
 const sls = require('serverless-http')
 const app = express()
 
-app.get('/', async (req, res, next) => {
+app.get('/products', async (req, res, next) => {
   try {
     return {
       statusCode: 200,

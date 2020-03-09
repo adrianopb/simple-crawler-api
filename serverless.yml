@@ -34,6 +34,7 @@ functions:
     - http:
         path: products
         method: get
+        private: false
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
