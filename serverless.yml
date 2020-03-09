@@ -11,9 +11,9 @@
 #
 # Happy Coding!
 
-service: simple-crawler-api
+service: service
 # app and org for use with dashboard.serverless.com
-app: simple-crawler-api
+app: api
 org: adrianopbraga1
 
 # You can pin your service to only deploy with a specific Serverless version
@@ -24,45 +24,17 @@ provider:
   name: aws
   runtime: nodejs12.x
 
- stage: dev
+ stage: prod
  region: us-east-1
 
-# you can add statements to the Lambda function's IAM Role here
-#  iamRoleStatements:
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:ListBucket"
-#      Resource: { "Fn::Join" : ["", ["arn:aws:s3:::", { "Ref" : "ServerlessDeploymentBucket" } ] ]  }
-#    - Effect: "Allow"
-#      Action:
-#        - "s3:PutObject"
-#      Resource:
-#        Fn::Join:
-#          - ""
-#          - - "arn:aws:s3:::"
-#            - "Ref" : "ServerlessDeploymentBucket"
-#            - "/*"
-
-# you can define service wide environment variables here
-#  environment:
-#    variable1: value1
-
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
-
 functions:
-  handler:   
+  app:   
     handler: handler.server
-      events:
-      - http:
-          path: /products
-          method: get
+    events:
+    - http:
+        path: products
+        method: get
+        private: false
 #      - websocket: $connect
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
