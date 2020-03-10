@@ -1,18 +1,18 @@
 service: service
 
-app: api
+app: crawler
 org: adrianopbraga1
 
 provider:
   name: aws
   runtime: nodejs12.x
 
-  stage: simple-crawler-api
+  stage: dev
   region: us-east-1
 
 functions:
   app:   
-    handler: handler.server
+    handler: handler.list
     events:
       - http:
           path: products
