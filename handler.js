@@ -54,6 +54,6 @@ module.exports.list = (event, context, callback) => {
             body: JSON.stringify(jsonResponse),
         };
 
-        callback(null, response);
+        callback(null, apiResponse);
     });
 };

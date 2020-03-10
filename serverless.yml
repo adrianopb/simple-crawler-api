@@ -1,5 +1,5 @@
 plugins:
-  - serverless-aws-documentation
+  - serverless-openapi-documentation
   
 service: service
 
@@ -20,3 +20,29 @@ functions:
       - http:
           path: products
           method: get
+
+custom:
+  documentation:
+    version: 1.0.0
+    title: Magazine Luiza Crawler
+    description: Seek for products 
+    models:
+      # GET
+      - name: ListProducts
+        description: List Products
+        contentType: application/json
+        schema:
+          $schema: http://json-schema.org/draft-04/schema#
+          title : Products
+          type : array
+          items:
+            type: object
+            properties:
+              nome:
+                type: string
+              preco:
+                type: number
+              imagem:
+                type: string
+              estoque:
+                type: integer

@@ -1,0 +1,17 @@
+openapi: 3.0.0
+components:
+  schemas:
+    ListProducts:
+      title: Products
+      type: array
+      items:
+        type: object
+        properties:
+          name:
+            type: string
+  securitySchemes: {}
+info:
+  title: Magazine Luiza Crawler
+  description: Seek for products
+  version: 1.0.0
+paths: {}
