@@ -13,14 +13,6 @@ provider:
   stage: dev
   region: us-east-1
 
-functions:
-  app:   
-    handler: handler.list
-    events:
-      - http:
-          path: products
-          method: get
-
 custom:
   documentation:
     version: 1.0.0
@@ -46,3 +38,18 @@ custom:
                 type: string
               estoque:
                 type: integer
+                
+functions:
+  app:   
+    handler: handler.list
+    events:
+      - http:
+          path: products
+          method: get
+          documentation:
+            summary: All products
+            description: Get a list of all products
+            methodResponses:
+              - statusCode: 200
+                responseModels:
+                  application/json: ListProducts

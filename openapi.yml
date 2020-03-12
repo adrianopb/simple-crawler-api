@@ -7,11 +7,29 @@ components:
       items:
         type: object
         properties:
-          name:
+          nome:
             type: string
+          preco:
+            type: number
+          imagem:
+            type: string
+          estoque:
+            type: integer
   securitySchemes: {}
 info:
   title: Magazine Luiza Crawler
   description: Seek for products
   version: 1.0.0
-paths: {}
+paths:
+  /products:
+    get:
+      operationId: app
+      summary: All products
+      description: Get a list of all products
+      responses:
+        '200':
+          description: Status 200 Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListProducts'
